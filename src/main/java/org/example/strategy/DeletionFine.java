@@ -9,25 +9,24 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public class AddFine implements Action {
+public class DeletionFine implements Action {
     Map<Person, List<Fine>> personList;
 
     @Override
     public void doAction() {
         Scanner scanner = new Scanner(System.in);
         Scanner scanner1 = new Scanner(System.in);
-        System.out.println("Введите ИНН человека которому добавляется штраф");
+        System.out.println("Введите ИНН человека которому удаляется штраф");
         int inn = scanner.nextInt();
         File file = new File("base.dat");
         if (file.exists()) {
             personList = readObject();
-            System.out.println("Введите тип штрафа:");
+            System.out.println("Введите тип штрафа который необходимо удалить:");
             String type = scanner1.nextLine();
-            System.out.println("Сумма:");
-            int sum = scanner.nextInt();
-            personList.get(new Person(inn)).add(new Fine(type, sum));
+            personList.get(new Person(inn)).remove(new Fine(type));
             PersonInfoHelper.saveObject(personList);
-            System.out.println("Новый штраф добавлен.");
+            System.out.println("Штраф удален.");
+
         }
     }
 }
