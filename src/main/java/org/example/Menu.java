@@ -32,7 +32,7 @@ public class Menu {
         }else {
             System.out.println(title);
             int menuCounter = 0;
-            while (menuCounter != 8) {
+            while (menuCounter != item.size()-1) {
                 for (int i = 0; i < item.size(); i++) {
                     System.out.println((i + 1) + ". " + item.get(i).title);
                 }

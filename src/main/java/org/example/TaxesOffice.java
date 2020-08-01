@@ -30,7 +30,7 @@ public class TaxesOffice {
         taxesOffice.add(new Menu("Добавление новых штрафов для уже существующей записи.", new AddFine()));
         taxesOffice.add(new Menu("Удаление штрафа.", new DeletionFine()));
         taxesOffice.add(new Menu("Замена информации о человеке.", new ChangPersonData()));
-        taxesOffice.add(new Menu("Выход.", () -> System.out.println("До свидания.")));
+       taxesOffice.add(new Menu("Выход.", () -> System.out.println("До свидания.")));
 
         taxesOffice.show();
     }
