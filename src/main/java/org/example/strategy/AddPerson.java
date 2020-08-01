@@ -3,13 +3,13 @@ package org.example.strategy;
 import org.example.Fine;
 import org.example.Person;
 import org.example.utils.PersonInfoHelper;
-
+import static org.example.utils.PersonInfoHelper.readObject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import static org.example.utils.PersonInfoHelper.readObject;
+
 
 public class AddPerson implements Action {
     Map<Person, List<Fine>> personList;
