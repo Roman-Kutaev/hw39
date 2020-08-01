@@ -27,7 +27,7 @@ public class TaxesOffice {
         taxesOffice.add(new Menu("Распечатка данных по конкретному типу штрафа.", new PrintDataByFine()));
         taxesOffice.add(new Menu("Распечатка данных по конкретному городу.", new PrintDataByTown()));
         taxesOffice.add(new Menu("Добавление нового человека с информацией о нем.", new AddPerson()));
-        taxesOffice.add(new Menu("Добавление новых штрафов для уже существующей записи.", () -> System.out.println("Action for item6")));
+        taxesOffice.add(new Menu("Добавление новых штрафов для уже существующей записи.", new AddFine()));
         taxesOffice.add(new Menu("Удаление штрафа.", () -> System.out.println("Action for item7")));
         taxesOffice.add(new Menu("Замена информации о человеке.", () -> System.out.println("Action for item8")));
         taxesOffice.add(new Menu("Выход.", () -> System.out.println("До свидания.")));
