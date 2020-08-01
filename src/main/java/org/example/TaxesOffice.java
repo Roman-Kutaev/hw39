@@ -1,13 +1,6 @@
 package org.example;
 
-import org.example.strategy.AddPerson;
-import org.example.strategy.PrintAllData;
-import org.example.strategy.PrintDataByFine;
-import org.example.strategy.PrintDataByInn;
-
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import org.example.strategy.*;
 
 /**
  * Реализовать базу данных налоговой инспекции по штрафам. Идентифицировать конкретного человека
@@ -28,12 +21,11 @@ import java.util.TreeMap;
 
 public class TaxesOffice {
     public static void main(String[] args) {
-        Map<Person, List<Fine>> personList = new TreeMap<>();
         Menu taxesOffice = new Menu("Добро пожаловать в приложение!");
         taxesOffice.add(new Menu("Полная распечатка базы данных.", new PrintAllData()));
         taxesOffice.add(new Menu("Распечатка данных по конкретному коду.", new PrintDataByInn()));
         taxesOffice.add(new Menu("Распечатка данных по конкретному типу штрафа.", new PrintDataByFine()));
-        taxesOffice.add(new Menu("Распечатка данных по конкретному городу.", () -> System.out.println("Action for item4")));
+        taxesOffice.add(new Menu("Распечатка данных по конкретному городу.", new PrintDataByTown()));
         taxesOffice.add(new Menu("Добавление нового человека с информацией о нем.", new AddPerson()));
         taxesOffice.add(new Menu("Добавление новых штрафов для уже существующей записи.", () -> System.out.println("Action for item6")));
         taxesOffice.add(new Menu("Удаление штрафа.", () -> System.out.println("Action for item7")));
